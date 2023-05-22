@@ -13,12 +13,26 @@ public class MyDialect {
 	@Autowired
 	com.consumeSoap1.service.MyService myService;
 	
-	public String getStringData() {
-		return myService.getStringFromService();
-	}
+
 	
 	public int getAddData(UserInput RequestBody) {
 		return myService.getAddResultService(RequestBody);
+		
+	}
+	
+	
+	public int getSubstractData(UserInput RequestBody) {
+		return myService.getSubstractResultService(RequestBody);
+		
+	}
+	
+	public int getMultiplayData(UserInput RequestBody) {
+		return myService.getMultiplyResultService(RequestBody);
+		
+	}
+	
+	public int getDivideData(UserInput RequestBody) {
+		return myService.getDivideResultService(RequestBody);
 		
 	}
 

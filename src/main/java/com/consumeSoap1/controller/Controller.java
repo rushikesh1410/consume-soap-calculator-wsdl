@@ -18,15 +18,26 @@ public class Controller {
 	@Autowired
 	MyDialect myDialect;
 	
-	@GetMapping("/all")
-	public String printData() {
-		return myDialect.getStringData();
-	}
 	
 	@PostMapping(value="/Add")
-	public int Addresult(@RequestBody UserInput requestbody ) {
+	public int addResult(@RequestBody UserInput requestbody ) {
 		return myDialect.getAddData(requestbody);
 	}
 
+	
+	@PostMapping(value="/Substract")
+	public int substractResult(@RequestBody UserInput requestbody ) {
+		return myDialect.getSubstractData(requestbody);
+	}
+	
+	@PostMapping(value="/Multiply")
+	public int multiplayResult(@RequestBody UserInput requestbody ) {
+		return myDialect.getMultiplayData(requestbody);
+	}
+	
+	@PostMapping(value="/Divide")
+	public int DivideResult(@RequestBody UserInput requestbody ) {
+		return myDialect.getDivideData(requestbody);
+	}
 
 }

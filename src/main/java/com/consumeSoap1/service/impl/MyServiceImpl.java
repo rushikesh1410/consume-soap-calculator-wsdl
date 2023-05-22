@@ -9,19 +9,36 @@ import io.codejournal.maven.wsdl2java.Calculator;
 
 
 @Service
-public class MyServiceImpl implements MyService {
+public  class MyServiceImpl implements MyService {
 
 	Calculator calculator = new Calculator();
 	
 	
-	public String getStringFromService() {
-		Calculator calculator = new Calculator();
-		return "the sum is = "+calculator.getCalculatorSoap().add(5, 10);
-	}
 
 	@Override
 	public int getAddResultService(UserInput requestbody) {
 		return calculator.getCalculatorSoap().add(requestbody.getIntA(), requestbody.getIntB());
+	}
+
+
+
+	@Override
+	public int getSubstractResultService(UserInput requestbody) {
+		return calculator.getCalculatorSoap().subtract(requestbody.getIntA(), requestbody.getIntB());
+	}
+
+
+
+	@Override
+	public int getMultiplyResultService(UserInput requestbody) {
+		return calculator.getCalculatorSoap().multiply(requestbody.getIntA(),requestbody.getIntB());
+	}
+
+
+
+	@Override
+	public int getDivideResultService(UserInput requestbody) {
+		return calculator.getCalculatorSoap().divide(requestbody.getIntA(), requestbody.getIntB());
 	}
 	
 	

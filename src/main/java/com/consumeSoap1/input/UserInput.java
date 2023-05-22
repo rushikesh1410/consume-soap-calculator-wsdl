@@ -32,7 +32,6 @@ public class UserInput {
 	//constructor using super
 	public UserInput() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
